@@ -59,4 +59,5 @@ def getregisterpage(request):
     return render(request, 'home/register.html')
 
 def getprofilepage(request):
+    print(request.GET.get('q'))
     return render(request, 'home/profilepage.html')
