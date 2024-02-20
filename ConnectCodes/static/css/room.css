@@ -52,15 +52,9 @@ main{
     flex-direction: column;
     gap:10px;
 
-
-
     background-color: var(--searchbox-background);
-
 }
 
-.chats>li{
-    margin-bottom:10px;
-}
 
 .chat_box>form{
     height:50px;
@@ -109,6 +103,11 @@ Chat cards
     border-radius: 15px;
 }
 
+.chats{
+    display:flex;
+    flex-direction: column-reverse;
+}
+
 .chats>li{
     list-style-type: none;
     background-color: var(--button-background);
@@ -116,6 +115,7 @@ Chat cards
     min-height: 80px;
     padding:10px;
     border-radius: 25px;
+    margin-bottom:10px;
 }
 
 .chats>li>a{

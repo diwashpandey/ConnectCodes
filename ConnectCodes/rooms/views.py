@@ -11,5 +11,5 @@ def getroompage(request, pk):
     
     room = Room.objects.get(id=key)
     messages = Message.objects.filter(room__id = key)
-
+    
     return render(request, "rooms/room.html", {'messages': messages, 'room' : room})
