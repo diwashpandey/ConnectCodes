@@ -8,7 +8,7 @@
 {% include "header_with_search.html" %}
 <main>
   <div class="topics_box">
-    <h2>Topics</h2>
+    <h2 class='center'>Topics</h2>
     <ul class="topics">
       {% for topic_name in topics %}
       <li>
@@ -28,8 +28,8 @@
       <p class="room_discription">{{ room.discription }}</p>
       <hr />
       <div class="room_card_footer">
-        <p class="room_member_count">{{ room.members.all.count }} Members</p>
-        <a href="{% url 'roompage' room.id %}" class="see_room_button"
+        <p class="room_member_count"><img src="{% static 'equipments/website_icons/homepage/members.svg' %}" alt="members icon" class="members_logo">{{ room.members.all.count }} Members</p>
+        <a href="{% url 'roompage' room.id %}" class="see_room_button center"
           >See Room</a
         >
       </div>
@@ -39,7 +39,7 @@
     
   </div>
   <div class="friends_box">
-    <h2>Your Friends</h2>
+    <h2 class="center">Your Friends</h2>
     <ul class="friends_list">
       <li class="friend">Diwash Pandey</li>
     </ul>

@@ -1,27 +1,10 @@
-body{
-    max-height:100vh;
-    min-height: 100vh;
-    max-width: 100vw;
-    padding:5px;
-    
-    display: flex;
-    flex-direction: column;
-    gap:5px;
-    background-color: var(--background-theme);
-    color:var(--theme-text);
-}
-/* 
-
-    ***** Main Box Starts from here *****
-
-*/
-
 main{
-    height:80vh;
+    height:calc(100vh - 10px);
     max-height:100vh;
     
     display:flex;
     gap:5px;
+    padding-top:80px;
 }
 
 main>div{
@@ -43,7 +26,9 @@ main>div{
 }
 
 .topics_box>h2{
-    font-size: 3em;
+    font-size: 2em;
+    font-weight: 500;
+    height:50px;
     width:130px;
     border-radius: 25px;
     margin-bottom: 20px;
@@ -51,10 +36,11 @@ main>div{
 }
 .topics_box li{
     list-style-type: none;
-    font-size: 2em;
+    margin-bottom:10px;
 }
 
 .topics_box a{
+    font-size: 1.2em;
     text-decoration: none;
 }
 
@@ -82,16 +68,18 @@ main>div{
 .create_room_button{
     background-color: var(--button-background);
     height:60px;
-    width:100px;
-    font-size: 1.1em;
+    width:140px;
+    font-size: 0.9em;
+    font-weight: 400;
     border-radius: 15px;
     text-decoration: none;
     
 }
 
 .main_container_header>h1{
-    font-size: 2.3em;
+    font-size: 2em;
     margin-left: 20px;
+    font-weight: 600;
     margin-bottom:20px;
 }
 
@@ -108,9 +96,10 @@ main>div{
 }
 
 .friends_box>h2{
-    font-size: 3em;
-    text-align: center;
-    width:200px;
+    font-size: 2em;
+    font-weight: 400;
+    width: 199px;
+    height: 64px;
     border-radius: 25px;
     margin-bottom: 20px;
     background-color: var(--searchbox-background);
@@ -133,7 +122,7 @@ main>div{
     background-color: var(--button-background);
     list-style-type: none;
 
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .room_card{
@@ -150,13 +139,17 @@ main>div{
 }
 
 .room_host{
-    color:var(--username-text);
-    font-size: 1.8em;
+    font-size: 1em;
+    font-style: italic;
+    display: block;
+    margin-bottom: 10px;
     text-decoration: none;
+    color:var(--username-text);
 }
 
 .room_discription{
-    font-size: 2em;
+    font-size: 1.8em;
+    font-weight: 400;
 }
 .room_card>hr{
     margin-top:20px;
@@ -172,19 +165,28 @@ main>div{
     bottom:10px;
 }
 
+.members_logo{
+    height:25px;
+    margin-right:5px;
+    position:relative;
+    top:3px;
+}
+
 .room_member_count{
-    font-size: 1.3em;
+    font-size: 1em;
+    display:flex;
+    align-items: center;
 }
 
 .see_room_button{
-    display:inline-block;
     height:50px;
     width:100px;
+
+
     background-color: var(--button-background);
+
     text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
+    font-size: 1em;
+    font-weight: 400;
     border-radius: 15px;
 }

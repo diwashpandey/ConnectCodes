@@ -1,11 +1,23 @@
-nav{
+header{
     height:60px;
-    width:90vw;
+    width:100vw;
     margin: auto;
+    
+    position: fixed;
+    padding:5px;
+    
+    top:0px;
+    left: 0px;
+    z-index: 50;
+}
 
+nav{
+    padding:0 40px;
     display:flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--mainboxes-background);
+    border-radius: 10px;
 }
 
 nav a{
@@ -17,6 +29,10 @@ nav a{
 
 .username{
     color:var(--username-text);
+}
+.profile_box{
+    display: flex;
+    align-items: center;
 }
 
 .profile_box>.logout_button{

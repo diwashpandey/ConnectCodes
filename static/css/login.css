@@ -1,13 +1,13 @@
 main{
-    background-color: var(--background-theme);
-    height:100vh;
-    width:100vw;
+    height:100%;
+    width:100%;
 }
 
 .login-container {
     width: 400px;
+    max-height:90vh;
     margin: 100px auto;
-    padding: 40px;
+    padding: 30px;
     background-color: #1a1a1a; /* darker background */
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* slight shadow effect */
@@ -70,13 +70,15 @@ main{
     list-style-type: none;
     height:50px;
     width:100%;
+    margin-bottom:20px;
 }
 
 .error{
     background-color: rgb(193, 0, 0);
+    padding:5px;
     height:100%;
     width:100%;
-    font-size: 1.4em;
+    font-size: 1em;
     border-radius:25px;
 }
 

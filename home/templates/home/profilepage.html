@@ -8,30 +8,31 @@
     body {
         margin: 0;
         padding: 0;
-        font-family: Arial, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #080808; /* dark background */
         color: #ffffff; /* text color */
     }
     .profile-container {
         width: 100%;
-        min-height: 100vh;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(to bottom, #1a1a1a, #080808); /* gradient background */
+        background-color: #080808; /* dark background */
     }
-    .profile-card {
+    .profile-content {
         max-width: 800px;
-        width: 90%;
+        width: 100%;
         padding: 40px;
         background-color: #1a1a1a; /* darker background */
         border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* slight shadow effect */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* subtle shadow effect */
         text-align: center;
     }
     .profile-header {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         margin-bottom: 30px;
     }
     .profile-avatar {
@@ -40,11 +41,16 @@
         border-radius: 50%;
         overflow: hidden;
         margin-right: 20px;
+        border: 5px solid #8f008b; /* theme color */
     }
     .profile-avatar img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+    .profile-details {
+        flex-grow: 1;
+        text-align: left;
     }
     .profile-name {
         color: #8f008b; /* theme color */
@@ -60,11 +66,29 @@
         color: #ffffff; /* text color */
         font-size: 16px;
         margin-bottom: 30px;
+        text-align: left;
+    }
+    .profile-posts {
+        text-align: left;
+    }
+    .post {
+        background-color: #1a1a1a; /* darker background */
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow effect */
+    }
+    .post p {
+        color: #ffffff; /* text color */
+        margin-bottom: 10px;
+    }
+    .post p:last-child {
+        margin-bottom: 0;
     }
     .profile-button {
-        padding: 10px 20px;
+        padding: 10px 30px;
         border: none;
-        border-radius: 10px;
+        border-radius: 30px;
         background-color: #8f008b; /* theme color */
         color: #ffffff; /* button text color */
         cursor: pointer;
@@ -80,7 +104,7 @@
 <body>
 
 <div class="profile-container">
-    <div class="profile-card">
+    <div class="profile-content">
         <div class="profile-header">
             <div class="profile-avatar">
                 <img src="https://via.placeholder.com/500x500" alt="Profile Picture">

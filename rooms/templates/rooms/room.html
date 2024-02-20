@@ -33,7 +33,7 @@
       {% if is_member %}
       <form method="post">
         {% csrf_token %}
-        <input type="text" name="message" />
+        <textarea type="text" name="message" class="messege_box"  required ></textarea>
         <button type="submit" class="send_button">
           <img src="{% static '/equipments/website_icons/roompage/send.svg' %}" alt=""/>
         </button>
@@ -45,7 +45,7 @@
   </div>
 
   <div class="members_container">
-    <h2>Members</h2>
+    <h2 class="center">Members</h2>
     <ul class="members_list">
       {% for member in room_members %}
       <li class="center">@{{ member.username }}</li>
