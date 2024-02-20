@@ -92,6 +92,17 @@ main{
     height:100%;
 }
 
+.join_button{
+    height:50px;
+    width:100px;
+    color:var(--theme-text);
+    text-decoration: none;
+    background-color: var(--button-background);
+    border-radius: 25px;
+    font-size: 20px;
+    margin-bottom:10px;
+}
+
 /* 
 
 Chat cards

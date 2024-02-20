@@ -11,15 +11,24 @@
   <div class="main_container">
     <h2>Welcome to room by @{{ room.host.username }}</h2>
     <h2 class="room_title">{{ room.discription }}</h2>
+
+    {% if not request.user.is_authenticated %}
+    <a href="#" class="join_button center">Join Room</a>
+    {% endif %}
+
     <div class="chat_box">
       <ul class="chats">
+
         {% for i in messages %}
         <li>
           <a href="#">@{{ i.user.username }}</a>
           <p>{{ i.message }}</p>
         </li>
         {% endfor %}
+
       </ul>
+
+      {% if request.user.is_authenticated %}
       <form method="post">
         {% csrf_token %}
         <input type="text" name="message" />
@@ -27,13 +36,18 @@
           <img src="{% static '/equipments/website_icons/roompage/send.svg' %}" alt=""/>
         </button>
       </form>
+      {% endif %}
+
+
     </div>
   </div>
 
   <div class="members_container">
     <h2>Members</h2>
     <ul class="members_list">
-      <li class="center">Drishya Pandey</li>
+      {% for member in room_members %}
+      <li class="center">@{{ member.username }}</li>
+      {% endfor %}
     </ul>
   </div>
 </main>

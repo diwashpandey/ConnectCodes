@@ -13,7 +13,7 @@ class Room(models.Model):
     host = models.ForeignKey(User, on_delete = models.CASCADE, related_name="room_host")
     discription = models.TextField()
     members = models.ManyToManyField(User, related_name="room_members", null=True, blank = True)
-
+    
     def __str__(self):
         return self.discription[:20]
     
