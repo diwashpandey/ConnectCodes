@@ -4,5 +4,6 @@ from . import views
 
 
 urlpatterns = [
-    path('<str:pk>/', views.getroompage, name='roompage'),
+    path('<int:pk>/', views.getroompage, name='roompage'),
+    path('createnewroom/', views.getcreateroompage, name='createroompage')
 ]

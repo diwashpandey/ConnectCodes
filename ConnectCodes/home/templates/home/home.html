@@ -1,48 +1,47 @@
 {% extends 'base.html' %}
 {% load static %}
-
-{% block title %}
-- home
+{% block title %} - home {% endblock%}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
 {% endblock %}
-{% block stylesheet %} 
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
-{% endblock %}
-
 {% block content %}
 {% include "header_with_search.html" %}
-  <main>
-      <div class="topics_box">
-          <h2>Topics</h2>
-          <ul class="topics">
-              {% for topic_name in topics %}
-              <li>
-                <a href="?={{ topic_name.topic }}">{{ topic_name.topic }}</a>
-              </li>
-              {% endfor %}
-          </ul>
-      </div>
-      <div class="main_container">
-          <h1>Rooms</h1>
+<main>
+  <div class="topics_box">
+    <h2>Topics</h2>
+    <ul class="topics">
+      {% for topic_name in topics %}
+      <li>
+        <a href="?={{ topic_name.topic }}">{{ topic_name.topic }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="main_container">
+    <h1>Rooms</h1>
 
-          {% for room in rooms %}
-          <div class="room_card">
-            <a href="#" class="room_host">@{{ room.host.username }}</a>
-            <p class="room_discription">{{ room.discription }}</p>
-            <hr>
-            <div class="room_card_footer">
-              <p class="room_member_count">5 members</p>
-              <a href="{% url 'roompage' room.id %}" class="see_room_button">See Room</a>
-            </div>
-        </div>
-          {% endfor %}
-          
+    {% for room in rooms %}
+    <div class="room_card">
+      <a href="#" class="room_host">@{{ room.host.username }}</a>
+      <p class="room_discription">{{ room.discription }}</p>
+      <hr />
+      <div class="room_card_footer">
+        <p class="room_member_count">5 members</p>
+        <a href="{% url 'roompage' room.id %}" class="see_room_button"
+          >See Room</a
+        >
       </div>
-      <div class="friends_box">
-          <h2>Your Friends</h2>
-          <ul class="friends_list">
-              <li class="friend">Diwash Pandey</li>
-          </ul>
-      </div>
-  </main>
+    </div>
+    {% endfor %}
+
+    <a href="{% url 'createroompage' %}" class="create_room_button center">Create New Room</a>
+  </div>
+  <div class="friends_box">
+    <h2>Your Friends</h2>
+    <ul class="friends_list">
+      <li class="friend">Diwash Pandey</li>
+    </ul>
+  </div>
+</main>
 
 {% endblock %}

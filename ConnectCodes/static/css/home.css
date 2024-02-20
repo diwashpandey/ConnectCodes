@@ -8,7 +8,7 @@ body{
     flex-direction: column;
     gap:5px;
     background-color: var(--background-theme);
-    
+    color:var(--theme-text);
 }
 /* 
 
@@ -61,6 +61,7 @@ main>div{
 .main_container{
     min-width:60vw;
     overflow-y: scroll;
+    position:relative;
 
 
     background-color: var(--mainboxes-background);
@@ -70,7 +71,23 @@ main>div{
 .main_container>h1{
     font-size: 2.3em;
     margin-left: 20px;
+    margin-bottom:20px;
 }
+
+.main_container>.create_room_button{
+    background-color: var(--button-background);
+    position: absolute;
+    z-index:10;
+    top:10px;
+    right:10%;
+    height:60px;
+    width:100px;
+    font-size: 1.1em;
+    border-radius: 15px;
+    text-decoration: none;
+    
+}
+
 .friends_box{
     width:100%;
 
