@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 
 def gethomepage(request):
-    rooms = Room.objects.all()
+    rooms = Room.objects.all().order_by("-id")
     topics = Topic.objects.all()
     return render(request, 'home/home.html', {"rooms":rooms, "topics":topics})
 
@@ -50,9 +50,13 @@ def getregisterpage(request):
                 user = User.objects.create(username = username)
                 user.set_password(password)
                 user.save()
+                return redirect('loginpage')
             else:
                 messages.error(request, "Password didnot match")
                 
         else:
             messages.error(request, "Username already exists")
     return render(request, 'home/register.html')
+
+def getprofilepage(request):
+    return render(request, 'home/profilepage.html')

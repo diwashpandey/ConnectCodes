@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Profile</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #080808; /* dark background */
+        color: #ffffff; /* text color */
+    }
+    .profile-container {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom, #1a1a1a, #080808); /* gradient background */
+    }
+    .profile-card {
+        max-width: 800px;
+        width: 90%;
+        padding: 40px;
+        background-color: #1a1a1a; /* darker background */
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* slight shadow effect */
+        text-align: center;
+    }
+    .profile-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .profile-avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 20px;
+    }
+    .profile-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .profile-name {
+        color: #8f008b; /* theme color */
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+    .profile-info {
+        color: #ffffff; /* text color */
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .profile-about {
+        color: #ffffff; /* text color */
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    .profile-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        background-color: #8f008b; /* theme color */
+        color: #ffffff; /* button text color */
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .profile-button:hover {
+        background-color: #6a0065; /* darker theme color on hover */
+    }
+</style>
+</head>
+<body>
+
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img src="https://via.placeholder.com/500x500" alt="Profile Picture">
+            </div>
+            <div class="profile-details">
+                <div class="profile-name">John Doe</div>
+                <div class="profile-info">
+                    <p>Email: johndoe@example.com</p>
+                    <p>Location: New York, USA</p>
+                    <p>Joined: January 1, 2020</p>
+                </div>
+                <a href="#" class="profile-button">Edit Profile</a>
+            </div>
+        </div>
+        <div class="profile-about">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at ultricies velit. Fusce interdum, velit ut volutpat suscipit, metus tellus tincidunt mi, ac congue odio arcu nec justo.</p>
+        </div>
+        <div class="profile-posts">
+            <h2>Recent Posts</h2>
+            <div class="post">
+                <p>This is a recent post by the user.</p>
+                <p>Posted on January 10, 2024</p>
+            </div>
+            <div class="post">
+                <p>Another recent post by the user.</p>
+                <p>Posted on January 5, 2024</p>
+            </div>
+            <!-- Additional posts can be added dynamically or fetched from a database -->
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

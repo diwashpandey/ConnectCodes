@@ -18,15 +18,17 @@
     </ul>
   </div>
   <div class="main_container">
-    <h1>Rooms</h1>
-
+    <div class="main_container_header">
+      <h1>Rooms</h1>
+      <a href="{% url 'createroompage' %}" class="create_room_button center">Create New Room</a>
+    </div>
     {% for room in rooms %}
     <div class="room_card">
       <a href="#" class="room_host">@{{ room.host.username }}</a>
       <p class="room_discription">{{ room.discription }}</p>
       <hr />
       <div class="room_card_footer">
-        <p class="room_member_count">5 members</p>
+        <p class="room_member_count">{{ room.members.all.count }} Members</p>
         <a href="{% url 'roompage' room.id %}" class="see_room_button"
           >See Room</a
         >
@@ -34,7 +36,7 @@
     </div>
     {% endfor %}
 
-    <a href="{% url 'createroompage' %}" class="create_room_button center">Create New Room</a>
+    
   </div>
   <div class="friends_box">
     <h2>Your Friends</h2>

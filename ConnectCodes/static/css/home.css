@@ -60,26 +60,27 @@ main>div{
 
 .main_container{
     min-width:60vw;
+    max-height:100vh;
     overflow-y: scroll;
-    position:relative;
-
 
     background-color: var(--mainboxes-background);
 
 }
 
-.main_container>h1{
-    font-size: 2.3em;
-    margin-left: 20px;
-    margin-bottom:20px;
+.main_container_header{
+    height:80px;
+    width:90%;
+    margin:auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    background-color: var(--mainboxes-background);
 }
 
-.main_container>.create_room_button{
+.create_room_button{
     background-color: var(--button-background);
-    position: absolute;
-    z-index:10;
-    top:10px;
-    right:10%;
     height:60px;
     width:100px;
     font-size: 1.1em;
@@ -87,6 +88,14 @@ main>div{
     text-decoration: none;
     
 }
+
+.main_container_header>h1{
+    font-size: 2.3em;
+    margin-left: 20px;
+    margin-bottom:20px;
+}
+
+
 
 .friends_box{
     width:100%;
@@ -128,10 +137,12 @@ main>div{
 }
 
 .room_card{
+    margin: auto;
     height:250px;
     width:90%;
     padding:20px;
     margin-bottom: 20px;
+    position: relative;
 
     border-radius: 20px;
     
@@ -147,12 +158,18 @@ main>div{
 .room_discription{
     font-size: 2em;
 }
-
+.room_card>hr{
+    margin-top:20px;
+    opacity: 0.3;
+}
 .room_card_footer{
     padding:20px;
+    width:95%;
     display:flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    bottom:10px;
 }
 
 .room_member_count{
