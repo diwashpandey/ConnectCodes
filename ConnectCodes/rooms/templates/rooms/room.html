@@ -11,10 +11,12 @@
   <div class="main_container">
     <h2>Welcome to room by @{{ room.host.username }}</h2>
     <h2 class="room_title">{{ room.discription }}</h2>
-
-    {% if not request.user.is_authenticated %}
-    <a href="#" class="join_button center">Join Room</a>
+    
+    
+    {% if not is_member %}
+    <a href="{% url 'joinroom' pk=room.id%}" class="join_button center">Join Room</a>
     {% endif %}
+    
 
     <div class="chat_box">
       <ul class="chats">
@@ -28,7 +30,7 @@
 
       </ul>
 
-      {% if request.user.is_authenticated %}
+      {% if is_member %}
       <form method="post">
         {% csrf_token %}
         <input type="text" name="message" />
