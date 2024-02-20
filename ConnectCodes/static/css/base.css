@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+:root{
+    --background-theme:#080808;
+    --navbar-background:#141414;
+    --searchbox-background: #1b1b1b;
+    --searchbox-text: #ffffff;
+    --theme-text:#ffffff;
+    --button-background:#8f008b;
+    --username-text:#ca00bd;
+    --mainboxes-background: #121212;
+}
+
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: "Teko", sans-serif;
+    font-weight: 300;
+    color: var(--theme-text)
+}
+
+.center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background-color: #080808;
+}

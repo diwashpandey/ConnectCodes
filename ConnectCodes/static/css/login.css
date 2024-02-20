@@ -1,0 +1,82 @@
+main{
+    background-color: var(--background-theme);
+    height:100vh;
+    width:100vw;
+}
+
+.login-container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #1a1a1a; /* darker background */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* slight shadow effect */
+}
+
+.login-container h1 {
+    text-align: center;
+    color: #8f008b; /* theme color */
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.login-container>form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    font-size: 1.5em;
+    width: calc(100% - 40px);
+    margin: 10px 0;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #3d3d3d; /* input field background */
+    color: #ffffff; /* input text color */
+}
+.login-container input[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #8f008b; /* theme color */
+    color: #ffffff; /* button text color */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.login-container input[type="submit"]:hover {
+    background-color: #6a0065; /* darker theme color on hover */
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+.register-link a {
+    color: #8f008b; /* theme color */
+    text-decoration: none;
+    font-weight: bold;
+}
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+.messages{
+    list-style-type: none;
+    height:50px;
+    width:100%;
+}
+
+.error{
+    background-color: rgb(193, 0, 0);
+    height:100%;
+    width:100%;
+    font-size: 1.4em;
+    border-radius:25px;
+}
+

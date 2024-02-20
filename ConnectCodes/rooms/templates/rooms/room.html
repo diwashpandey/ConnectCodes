@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}- Room{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/room.css' %}" />
+{% endblock %}
+{% block content %}
+
+{% include "header.html" %}
+<main>
+  <div class="main_container">
+    <h2>Welcome to room by @{{ room.host.username }}</h2>
+    <h2 class="room_title">{{ room.discription }}</h2>
+    <div class="chat_box">
+      <ul class="chats">
+        {% for i in messages %}
+        <li>
+          <a href="#">@{{ i.user.username }}</a>
+          <p>{{ i.message }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+      <form method="post">
+        {% csrf_token %}
+        <input type="text" name="message" />
+        <button type="submit" class="send_button">
+          <img
+            src="{% static '/equipments/website_icons/roompage/send.svg' %}"
+            alt=""
+          />
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="members_container">
+    <h2>Members</h2>
+    <ul class="members_list">
+      <li class="center">Drishya Pandey</li>
+      <li class="center">Drishya Pandey</li>
+      <li class="center">Drishya Pandey</li>
+      <li class="center">Drishya Pandey</li>
+    </ul>
+  </div>
+</main>
+{% endblock %}

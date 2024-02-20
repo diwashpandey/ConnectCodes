@@ -1,0 +1,156 @@
+body{
+    max-height:100vh;
+    min-height: 100vh;
+    max-width: 100vw;
+    padding:5px;
+    
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    background-color: var(--background-theme);
+    
+}
+/* 
+
+    ***** Main Box Starts from here *****
+
+*/
+
+main{
+    height:80vh;
+    max-height:100vh;
+    
+    display:flex;
+    gap:5px;
+}
+
+main>div{
+    border-radius: 10px;
+    padding:20px;
+}
+
+.topics_box{
+    height:60vh;
+    width:20vw;
+    min-width: 300px;
+
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    background-color: var(--mainboxes-background);
+}
+
+.topics_box>h2{
+    font-size: 3em;
+    width:130px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    background-color: var(--searchbox-background);
+}
+.topics_box li{
+    list-style-type: none;
+    font-size: 2em;
+}
+
+.topics_box a{
+    text-decoration: none;
+}
+
+.main_container{
+    min-width:60vw;
+    overflow-y: scroll;
+
+
+    background-color: var(--mainboxes-background);
+
+}
+
+.main_container>h1{
+    font-size: 2.3em;
+    margin-left: 20px;
+}
+.friends_box{
+    width:100%;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--mainboxes-background);
+}
+
+.friends_box>h2{
+    font-size: 3em;
+    text-align: center;
+    width:200px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    background-color: var(--searchbox-background);
+}
+
+.friends_list{
+    width:100%;
+}
+
+.friends_list>li{
+    height:60px;
+    width:100%;
+    padding:10px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 15px;
+
+    background-color: var(--button-background);
+    list-style-type: none;
+
+    font-size: 1.5em;
+}
+
+.room_card{
+    height:250px;
+    width:90%;
+    padding:20px;
+    margin-bottom: 20px;
+
+    border-radius: 20px;
+    
+    background-color: var(--searchbox-background);
+}
+
+.room_host{
+    color:var(--username-text);
+    font-size: 1.8em;
+    text-decoration: none;
+}
+
+.room_discription{
+    font-size: 2em;
+}
+
+.room_card_footer{
+    padding:20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.room_member_count{
+    font-size: 1.3em;
+}
+
+.see_room_button{
+    display:inline-block;
+    height:50px;
+    width:100px;
+    background-color: var(--button-background);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 15px;
+}

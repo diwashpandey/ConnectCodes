@@ -1,0 +1,32 @@
+{% load static %}
+
+<header>
+    <nav>
+      <a href="/">
+        <img
+          src="{% static 'equipments/website_icons/homepage/logo.svg' %}"
+          alt="LOGO"
+          height="50px"
+        />
+      </a>
+      <div class="profile_box">
+        {% if request.user.is_authenticated %}
+        <a href="#" class="username">@{{ request.user.username }}</a>
+        <a href="{% url 'logoutuser' %}" class="logout_button">Logout</a>
+        {% else %}
+        <a href="{% url 'loginpage' %}" class="logout_button">Login</a>
+        {% endif %}
+    </div>
+      
+    </nav>
+    <form class="search center" >
+      <input type="text" name="q" class="searchbox" placeholder="Search here"/>
+      <button type="submit" >
+        <img
+          src="{% static 'equipments/website_icons/homepage/search.svg' %}"
+          alt="search-icon"
+          height="30px"
+        />
+      </button>
+    </form>
+  </header>

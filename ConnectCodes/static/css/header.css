@@ -1,0 +1,66 @@
+nav{
+    height:60px;
+    width:90vw;
+    margin: auto;
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a{
+    color:var(--theme-text);
+    font-size: 1.4em;
+    margin:10px;
+    text-decoration: none;
+}
+
+.username{
+    color:var(--username-text);
+}
+
+.profile_box>.logout_button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height:40px;  
+    width:100px;
+
+    border-radius: 15px;
+
+    background-color: var(--button-background);
+}
+.search{ 
+    height:60px;
+    width:100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.searchbox{
+    height:80%;
+    width:60%;
+    padding-left:30px;
+
+    background-color: var(--searchbox-background);
+    color: var(--searchbox-text);
+    font-size: 1.6em;
+    border:none;
+    border-radius: 50px;
+}
+
+.searchbox:focus-visible{
+    outline:none;
+}
+
+.search>button{
+    background-color: var(--searchbox-background);
+    height:50px;
+    width:50px;
+    border:none;
+    border-radius: 50%;
+
+}
