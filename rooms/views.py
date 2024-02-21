@@ -21,7 +21,6 @@ def getroompage(request, pk):
     is_member = False
     if request.user in room_members:
         is_member = True
-    print("Is member:", is_member)
     return render(request, "rooms/room.html", {'messages': messages, 'room' : room, 'room_members': room_members, "is_member": is_member})
 
 @login_required(login_url = "loginpage")
