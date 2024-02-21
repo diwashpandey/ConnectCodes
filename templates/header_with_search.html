@@ -21,7 +21,7 @@
       </form>
       <div class="profile_box">
         {% if request.user.is_authenticated %}
-        <a href="#" class="username">@{{ request.user.username }}</a>
+        <a href="{% url 'profilepage'%}?profile={{ request.user.username }}" class="username">@{{ request.user.username }}</a>
         <a href="{% url 'logoutuser' %}" class="logout_button">Logout</a>
         {% else %}
         <a href="{% url 'loginpage' %}" class="logout_button">Login</a>

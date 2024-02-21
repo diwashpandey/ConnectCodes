@@ -24,7 +24,7 @@
     </div>
     {% for room in rooms %}
     <div class="room_card">
-      <a href="#" class="room_host">@{{ room.host.username }}</a>
+      <a href="{% url 'profilepage' %}?profile={{ room.host.username }}" class="room_host">@{{ room.host.username }}</a>
       <p class="room_discription">{{ room.discription }}</p>
       <hr />
       <div class="room_card_footer">

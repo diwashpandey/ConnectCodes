@@ -1,142 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>User Profile</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #080808; /* dark background */
-        color: #ffffff; /* text color */
-    }
-    .profile-container {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #080808; /* dark background */
-    }
-    .profile-content {
-        max-width: 800px;
-        width: 100%;
-        padding: 40px;
-        background-color: #1a1a1a; /* darker background */
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* subtle shadow effect */
-        text-align: center;
-    }
-    .profile-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 30px;
-    }
-    .profile-avatar {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-right: 20px;
-        border: 5px solid #8f008b; /* theme color */
-    }
-    .profile-avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .profile-details {
-        flex-grow: 1;
-        text-align: left;
-    }
-    .profile-name {
-        color: #8f008b; /* theme color */
-        font-size: 36px;
-        margin-bottom: 10px;
-    }
-    .profile-info {
-        color: #ffffff; /* text color */
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-    .profile-about {
-        color: #ffffff; /* text color */
-        font-size: 16px;
-        margin-bottom: 30px;
-        text-align: left;
-    }
-    .profile-posts {
-        text-align: left;
-    }
-    .post {
-        background-color: #1a1a1a; /* darker background */
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow effect */
-    }
-    .post p {
-        color: #ffffff; /* text color */
-        margin-bottom: 10px;
-    }
-    .post p:last-child {
-        margin-bottom: 0;
-    }
-    .profile-button {
-        padding: 10px 30px;
-        border: none;
-        border-radius: 30px;
-        background-color: #8f008b; /* theme color */
-        color: #ffffff; /* button text color */
-        cursor: pointer;
-        transition: background-color 0.3s;
-        font-size: 16px;
-        text-decoration: none;
-    }
-    .profile-button:hover {
-        background-color: #6a0065; /* darker theme color on hover */
-    }
-</style>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-<div class="profile-container">
-    <div class="profile-content">
-        <div class="profile-header">
-            <div class="profile-avatar">
-                <img src="https://via.placeholder.com/500x500" alt="Profile Picture">
-            </div>
-            <div class="profile-details">
-                <div class="profile-name">John Doe</div>
-                <div class="profile-info">
-                    <p>Email: johndoe@example.com</p>
-                    <p>Location: New York, USA</p>
-                    <p>Joined: January 1, 2020</p>
-                </div>
-                <a href="#" class="profile-button">Edit Profile</a>
-            </div>
-        </div>
-        <div class="profile-about">
-            <h2>About Me</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at ultricies velit. Fusce interdum, velit ut volutpat suscipit, metus tellus tincidunt mi, ac congue odio arcu nec justo.</p>
-        </div>
-        <div class="profile-posts">
-            <h2>Recent Posts</h2>
-            <div class="post">
-                <p>This is a recent post by the user.</p>
-                <p>Posted on January 10, 2024</p>
-            </div>
-            <div class="post">
-                <p>Another recent post by the user.</p>
-                <p>Posted on January 5, 2024</p>
-            </div>
-            <!-- Additional posts can be added dynamically or fetched from a database -->
-        </div>
+{% block title %} -Profile {% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/profilepage.css' %}" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet"/>
+{% endblock %}
+{% block content %}
+{% include 'header.html' %}
+
+<main class="profile-page">
+  <div class="content">
+    <div class="content__cover">
+      <img class="content__avatar"></img>
     </div>
+    <div class="content__actions">
+      <a href="#" class="button"><span>Connect</span></a>
+      <a href="#" class="button"><span>Message</span></a>
+    </div>
+    <div class="content__title">
+      <h1>{{ user.username }}</h1>
+      <span>Kathmandu, Nepal</span>
+    </div>
+    <div class="content__description">
+      <p>Web Producer - Web Specialist</p>
+      <p>Columbia University - New York</p>
+    </div>
+    <ul class="content__list">
+      <li><span class="numbers">65</span>Followers</li>
+      <li><span class="numbers">43</span>Rooms</li>
+      <li><span class="numbers">21</span>Following</li>
+    </ul>
+    <div class="content__button">
+      <a class="button" href="#">
+        <div class="button__border"></div>
+        <div class="button__bg"></div>
+        <p class="button__text">Show more</p></a>
+    </div>
+  </div>
 </div>
 
-</body>
-</html>
+{% endblock %}

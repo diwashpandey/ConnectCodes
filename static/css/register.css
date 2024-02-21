@@ -1,73 +1,67 @@
-main{
-    height:100%;
-    width:100%;
+main {
+  height: 100%;
+  width: 100%;
 }
-
 
 .register-container {
-    width: 400px;
-    padding: 20px;
-    background-color: #1a1a1a; /* darker background */
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* slight shadow effect */
+  width: 400px;
+  padding: 20px;
+  background-color: #1a1a1a; /* darker background */
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* slight shadow effect */
 }
-
 
 .register-container h1 {
-    font-size: 3em;
-    text-align: center;
-    color: #8f008b; /* theme color */
-    margin-bottom: 30px;
+  font-size: 3em;
+  text-align: center;
+  color: #8f008b; /* theme color */
+  margin-bottom: 30px;
 }
 
-.register-container>form{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+.register-container > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 .register-container input[type="text"],
 .register-container input[type="password"] {
-    font-size: 1.5em;
-    width: calc(100% - 40px);
-    margin: 10px 0;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    background-color: #3d3d3d; /* input field background */
-    color: #ffffff; /* input text color */
+  font-size: 1.5em;
+  width: calc(100% - 40px);
+  margin: 10px 0;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #3d3d3d; /* input field background */
+  color: #ffffff; /* input text color */
 }
 .register-container input[type="submit"] {
-    width: 100%;
-    margin-top: 20px;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    background-color: #8f008b; /* theme color */
-    color: #ffffff; /* button text color */
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size:1.3em;
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #8f008b; /* theme color */
+  color: #ffffff; /* button text color */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.3em;
 }
 .register-container input[type="submit"]:hover {
-    background-color: #6a0065; /* darker theme color on hover */
+  background-color: #6a0065; /* darker theme color on hover */
 }
 
-
-.messages{
-    list-style-type: none;
-    height:50px;
-    width:100%;
-    margin-bottom:20px;
+.messages {
+  list-style-type: none;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.error{
-    
-    background-color: rgb(193, 0, 0);
-    height:100%;
-    width:100%;
-    font-size: 1.4em;
-    border-radius:25px;
+.error {
+  background-color: rgb(193, 0, 0);
+  height: 100%;
+  width: 100%;
+  font-size: 1.4em;
+  border-radius: 25px;
 }
-

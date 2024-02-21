@@ -11,12 +11,13 @@
     max-width: 600px;
     width: 90%;
     padding: 40px;
-    background-color: #1a1a1a; /* darker background */
+    background-color: #1a1a1a;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* slight shadow effect */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
-.room-form h1 {
+.room-form>h1 {
+    font-weight: 500;
     color: #8f008b; /* theme color */
     font-size: 36px;
     margin-bottom: 30px;
@@ -30,6 +31,7 @@
     border-radius: 15px;
     background-color: #3d3d3d; /* input field background */
     color: #ffffff; /* input text color */
+    font-size:1.3em;
 }
 .room-form textarea {
     resize: none; /* Prevent textarea from being resized */

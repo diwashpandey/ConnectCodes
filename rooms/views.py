@@ -7,6 +7,7 @@ from django.http import HttpResponse
 def getroompage(request, pk):
     key = int(pk)
 
+    # this receives the messege that user has sent
     if request.method == 'POST':
         message = request.POST.get('message')
         room = Room.objects.get(id=key)

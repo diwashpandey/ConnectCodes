@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from rooms.models import Room, Topic
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
@@ -59,5 +59,12 @@ def getregisterpage(request):
     return render(request, 'home/register.html')
 
 def getprofilepage(request):
-    print(request.GET.get('q'))
-    return render(request, 'home/profilepage.html')
+    username = request.GET.get('profile')
+    user = User.objects.filter(username = username)
+    if user.exists():
+        return render(request, 'home/profilepage.html', {"user" : user[0]})
+    else:
+        redirect('homepage')
+
+def gettestpage(request):
+    return reverse('profilepage')
