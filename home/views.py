@@ -66,5 +66,3 @@ def getprofilepage(request):
     else:
         redirect('homepage')
 
-def gettestpage(request):
-    return reverse('profilepage')
