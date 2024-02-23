@@ -25,9 +25,6 @@
   background: linear-gradient(150deg, #1d8cf8 20%, #3358f4 100%);
 }
 
-.content__actions > .button {
-  
-}
 
 .profile-page .content__avatar {
   height:12rem;
@@ -79,7 +76,13 @@
 .profile-page .content__title h1 {
   margin-bottom: 0.1rem;
   font-size: 2.4rem;
-  color: var(--username-text);
+  font-weight: 400;
+}
+
+.profile-page .content__title h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: var(--button-background);
 }
 
 .profile-page .content__title span {

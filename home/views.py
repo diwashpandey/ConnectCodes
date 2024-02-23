@@ -49,11 +49,12 @@ def getregisterpage(request):
         username = data.get('username')
         password = data.get('password')
         repassword = data.get('repassword')
+        full_name = data.get('fullname')
 
         check_user = User.objects.filter(username = username)
         if not check_user.exists():
             if password == repassword:
-                user = User.objects.create(username = username)
+                user = User.objects.create(username = username, full_name=full_name)
                 user.set_password(password)
                 user.save()
                 return redirect('loginpage')
@@ -64,12 +65,12 @@ def getregisterpage(request):
             messages.error(request, "Username already exists")
     return render(request, 'home/register.html')
 
+@login_required(login_url="loginpage")
 def getprofilepage(request):
     if request.method=="POST":
         if request.user.is_authenticated:
             data = request.POST
             commit = data.get("commit")
-            print('This is the connit:\n\n:',commit)
             commit = commit.strip().split()
 
             to_do = commit[0]
@@ -89,7 +90,7 @@ def getprofilepage(request):
         else:
             return redirect('loginpage')
         
-
+              
     username = request.GET.get('profile')
 
 
@@ -111,9 +112,6 @@ def getprofilepage(request):
                 "followers":followers_count,
                 "following":following_count,
                 'already_following': already_following}
-        
-        
-
 
         return render(request, 'home/profilepage.html', data)
     except User.DoesNotExist:
