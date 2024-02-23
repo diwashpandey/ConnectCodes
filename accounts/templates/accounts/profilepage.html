@@ -40,11 +40,11 @@
     <div class="content__title">
       <h1>{{ user.full_name }}</h1>
       <h3>@{{ user.username }}</h3>
-      <span>Kathmandu, Nepal</span>
+      <span>{{ user.location}}</span>
     </div>
     <div class="content__description">
-      <p>Web Producer - Web Specialist</p>
-      <p>Columbia University - New York</p>
+      <p style="font-weight: 400; font-size: 0.9em;">Bio:</p>
+      <p>{{ user.bio }}</p>
     </div>
     <ul class="content__list">
       <li><span class="numbers">{{followers}}</span>Followers</li>

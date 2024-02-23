@@ -5,7 +5,6 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-
 @login_required(login_url="loginpage")
 def getprofilepage(request):
     if request.method=="POST":
@@ -31,9 +30,7 @@ def getprofilepage(request):
         else:
             return redirect('loginpage')
         
-              
     username = request.GET.get('profile')
-
 
     try:
         user = User.objects.get(username=username)
@@ -46,7 +43,6 @@ def getprofilepage(request):
         already_following = False
         if user in request.user.following.all():
             already_following = True
-
 
         data = {"user" : user,
                 "room_count":room_count,
@@ -61,7 +57,6 @@ def getprofilepage(request):
 @login_required(login_url='login_page')
 def getedit_profilepage(request, userid):
     try:
-        print("i am inside try")
         user = User.objects.get(username = userid)
 
         if request.method == "POST":
@@ -70,15 +65,13 @@ def getedit_profilepage(request, userid):
             user.bio = received_data.get("bio")
             user.location = received_data.get("location")
             user.save()
-            print(user)
-            return redirect(reverse('profilepage') + userid)
-    
+            print(reverse('profilepage')+"?="+userid)
+            return redirect(reverse('profilepage')+"?profile="+userid)
+
         if user == request.user:
-            print("you are real user")
             full_name = user.full_name
             bio = user.bio
             location = user.location
-
             data = {
                 "full_name":full_name,
                 "bio":bio,
@@ -87,12 +80,7 @@ def getedit_profilepage(request, userid):
 
             return render(request, 'accounts/edit_profilepage.html', {"user" : data})
         else:
-            print("You are not the real user")
             return redirect("homepage")
             
-
     except:
-        print("la mya error po vayo ta")
         return redirect("homepage")
-    
-    return redirect('homepage')

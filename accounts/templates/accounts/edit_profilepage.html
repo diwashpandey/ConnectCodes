@@ -18,33 +18,15 @@
       </div>
       
     </div>
-    <div class="content__actions">
-      {% if not request.user == user %}
-      <form method="post">
-        {% csrf_token %}
-        <button class="button"
-        {% if not request.user.username == user.username %}
-        type="submit" name="commit" value="{% if already_following %} unfollow {{user.username}}{% else %}follow {{user.username}}{% endif %}"
 
-        {% endif %}>
-          {% if already_following %}
-          Unfollow
-          {% else %}
-          Follow
-          {% endif %}
-        </button></form>
-        {% endif %}
-    </div>
     <form class="content__title center" method="post">
       {% csrf_token %}
       <p>Name:</p>
-      <input type="text" value="{{ user.full_name }}" required>
+      <input type="text" value="{{ user.full_name }}" required name="full_name">
       <p>Location:</p>
-      <input type="text" value='{{user.location}}' required>
+      <input type="text" value='{{user.location}}' name = "location" required>
       <p>Bio:</p>
-      <textarea class="content__description" required>
-        {{user.bio}}
-      </textarea>
+      <textarea class="content__description" name="bio" required>{{user.bio}}</textarea>
       <button type="submit">Change Profile</button>
     </form>
     
