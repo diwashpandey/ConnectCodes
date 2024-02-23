@@ -73,6 +73,7 @@ main>div{
     font-weight: 400;
     border-radius: 15px;
     text-decoration: none;
+    color:white;
     
 }
 
@@ -189,4 +190,5 @@ main>div{
     font-size: 1em;
     font-weight: 400;
     border-radius: 15px;
+    color:white;
 }

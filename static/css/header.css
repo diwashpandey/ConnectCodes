@@ -45,6 +45,7 @@ nav a{
     border-radius: 15px;
 
     background-color: var(--button-background);
+    color:white;
 }
 .search{ 
     height:60px;

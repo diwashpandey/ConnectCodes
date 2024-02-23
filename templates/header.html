@@ -15,7 +15,15 @@
         {% else %}
         <a href="{% url 'loginpage' %}" class="logout_button">Login</a>
         {% endif %}
+        <label for="theme_selection" class="theme_box">
+          <input type="checkbox" id="theme_selection">
+          <img src="{% static 'equipments/website_icons/homepage/moon.svg' %}" alt="Moon Icon" class="moon">
+          <img src="{% static 'equipments/website_icons/homepage/sun.svg' %}" alt="Sun Icon" class="sun active">
+
+        </label>
     </div>
     
+    
   </nav>
+  <script src="{% static 'js/themechanger.js' %}"></script>
 </header>
