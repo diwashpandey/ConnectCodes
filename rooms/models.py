@@ -1,6 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 # Create your models here.
+
+User = get_user_model()
 
 class Topic(models.Model):
     topic = models.CharField(max_length = 40)
@@ -12,7 +15,7 @@ class Room(models.Model):
     topic = models.ForeignKey(Topic, on_delete = models.CASCADE)
     host = models.ForeignKey(User, on_delete = models.CASCADE, related_name="room_host")
     discription = models.TextField()
-    members = models.ManyToManyField(User, related_name="room_members", null=True, blank = True)
+    members = models.ManyToManyField(User, related_name="room_members")
     
     def __str__(self):
         return self.discription[:20]

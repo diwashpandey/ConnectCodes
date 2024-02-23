@@ -22,6 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-0hnn@@6d3*hml87a5d+qsef70euj9^ukzb=2kv4r94ly-#)6je'
 
+AUTH_USER_MODEL = 'accounts.UserAccount'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -39,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'rooms',
-    'accounts'
+    'accounts',
 ]
 
 MIDDLEWARE = [

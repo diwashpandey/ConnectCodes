@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Message, Room, Topic
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+# from django.contrib.auth.models import User
 # Create your views here.
 
 def getroompage(request, pk):

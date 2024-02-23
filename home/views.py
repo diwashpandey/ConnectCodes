@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect, reverse
 from rooms.models import Room, Topic
+from django.contrib.auth import get_user_model
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+
+
+User = get_user_model()
 # Create your views here.
 
 
