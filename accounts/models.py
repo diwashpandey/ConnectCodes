@@ -6,4 +6,5 @@ class UserAccount(AbstractUser):
     profile_pic = models.ImageField(upload_to="profile_photo/", default="default_profile_photo.jpg")
     location = models.CharField(max_length = 256, blank=True)
     age = models.IntegerField(blank=True,  null=True)
-    friends = models.ManyToManyField('self')
+
+    following = models.ManyToManyField('self', blank=True, related_name="followers", symmetrical=False)

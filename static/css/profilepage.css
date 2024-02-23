@@ -26,23 +26,28 @@
 }
 
 .content__actions > .button {
-  background-color: var(--button-background);
+  
 }
 
 .profile-page .content__avatar {
+  height:12rem;
   width: 12rem;
-  height: 12rem;
+
   position: absolute;
   bottom: 0;
   left: 50%;
   z-index: 2;
+
   transform: translate(-50%, 50%);
-  background: #8f6ed5
-    url("https://image.freepik.com/free-photo/friendly-brunette-looking-camera_23-2147774849.jpg")
-    center center no-repeat;
-  background-size: cover;
   border-radius: 50%;
-  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.content__avatar>img{
+  height:100%;
+  width:100%;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .profile-page .content__actions {
@@ -51,7 +56,7 @@
   padding: 0.2rem;
 }
 
-.profile-page .content__actions a {
+.profile-page .content__actions .button {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -61,6 +66,8 @@
   border-radius: 2rem;
   text-decoration: none;
   font-size: 0.9rem;
+  background-color: var(--button-background);
+  border:none;
 }
 
 .profile-page .content__title {
