@@ -69,16 +69,7 @@ def getedit_profilepage(request, userid):
             return redirect(reverse('profilepage')+"?profile="+userid)
 
         if user == request.user:
-            full_name = user.full_name
-            bio = user.bio
-            location = user.location
-            data = {
-                "full_name":full_name,
-                "bio":bio,
-                "location":location
-            }
-
-            return render(request, 'accounts/edit_profilepage.html', {"user" : data})
+            return render(request, 'accounts/edit_profilepage.html', {"user" : user})
         else:
             return redirect("homepage")
             

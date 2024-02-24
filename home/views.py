@@ -49,7 +49,7 @@ def getregisterpage(request):
         username = data.get('username')
         password = data.get('password')
         repassword = data.get('repassword')
-        full_name = data.get('fullname')
+        full_name = data.get('full_name')
 
         check_user = User.objects.filter(username = username)
         if not check_user.exists():

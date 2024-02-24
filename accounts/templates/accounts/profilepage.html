@@ -35,7 +35,9 @@
         </button></form>
         {% endif %}
       
-      <a href="#" class="button"><span>Message</span></a>
+      {% if user == request.user %}
+      <a href="{% url 'edit_profilepage' userid=user.username %}" class="button"><span>Edit Profile</span></a>
+      {% endif %}
     </div>
     <div class="content__title">
       <h1>{{ user.full_name }}</h1>
