@@ -9,3 +9,8 @@ class UserAccount(AbstractUser):
     bio = models.TextField(blank=True, null=True)
 
     following = models.ManyToManyField('self', blank=True, related_name="followers", symmetrical=False)
+
+
+    def delete_photo(self):
+        self.profile_pic = "default_profile_photo.jpg"
+        self.save()
