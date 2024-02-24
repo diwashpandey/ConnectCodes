@@ -45,7 +45,30 @@
   object-fit: cover;
   object-position: center center;
 }
+.photo_upload_button{
+  height: 3rem;
+  width: 3rem;
+  padding:10px;
 
+  position: absolute;
+  bottom: 0;
+  top: 5rem;
+  left: 56%;
+  z-index: 5;
+
+  background-color: rgba(103, 103, 103, 0.468);
+  border-radius: 50%;
+}
+.photo_upload_button>label{
+  height: 100%;
+  width: 100%;
+  padding:10px;
+}
+
+.photo_upload_button>img{
+  height:100%;
+  width: 100%;
+}
 .profile-page .content__actions {
   display: flex;
   justify-content: space-between;

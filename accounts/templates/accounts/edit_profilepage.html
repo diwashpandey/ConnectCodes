@@ -16,10 +16,9 @@
       <div class="content__avatar">
         <img src="/media/{{user.profile_pic}}" alt="Profile_Pic"></img>
       </div>
-      
     </div>
 
-    <form class="content__title center" method="post">
+    <form class="content__title center" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       <p>Name:</p>
       <input type="text" value="{{ user.full_name }}" required name="full_name">
@@ -28,9 +27,13 @@
       <p>Bio:</p>
       <textarea class="content__description" name="bio" required>{{user.bio}}</textarea>
       <button type="submit">Change Profile</button>
+      <label for="photo_upload" class="center photo_upload_button">
+        <img src="{% static 'equipments/website_icons/profilepage/camera.svg' %}" alt="camera icon">
+      </label>
+      <input type="file" name="profile_pic" accept=".jpg, .jpeg, .png" id="photo_upload" hidden>
     </form>
     
   </div>
 </main>
-
+<script src="{% static 'js/profile_photo_viewer.js' %}"></script>
 {% endblock %}

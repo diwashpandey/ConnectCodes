@@ -64,8 +64,11 @@ def getedit_profilepage(request, userid):
             user.full_name = received_data.get("full_name")
             user.bio = received_data.get("bio")
             user.location = received_data.get("location")
+            profile_pic = request.FILES.get("profile_pic")
+
+            if profile_pic is not None:
+                user.profile_pic = profile_pic
             user.save()
-            print(reverse('profilepage')+"?="+userid)
             return redirect(reverse('profilepage')+"?profile="+userid)
 
         if user == request.user:
@@ -73,5 +76,5 @@ def getedit_profilepage(request, userid):
         else:
             return redirect("homepage")
             
-    except:
-        return redirect("homepage")
+    except Exception as e:
+        print("An error occurred:", e)
