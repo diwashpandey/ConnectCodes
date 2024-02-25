@@ -13,8 +13,6 @@ def getroompage(request, pk):
         room = Room.objects.get(id=key)
         Message.objects.create(room = room, user = request.user, message = message)
     
-    
-
     room = Room.objects.get(id=key)
     room_members = room.members.all()
     messages = Message.objects.filter(room__id = key)

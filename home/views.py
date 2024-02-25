@@ -7,16 +7,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 # from django.contrib.auth.models import User
 
-
 User = get_user_model()
 # Create your views here.
-
 
 def gethomepage(request):
     rooms = Room.objects.all().order_by("-id")
     topics = Topic.objects.all()
     return render(request, 'home/home.html', {"rooms":rooms, "topics":topics})
-
 
 def getloginpage(request):
     if request.method == 'POST':
