@@ -8,9 +8,11 @@
     --button-background:#c100bb;
     --username-text:#ca00bd;
     --mainboxes-background: #ffffff;
-}
-
-.darktheme_appplied{
+    --box-innertext: #ffffff;
+  }
+  
+  .darktheme_appplied{
+    --box-innertext: #ffffff;
     --background-theme:#080808;
     --navbar-background:#141414;
     --searchbox-background: #1b1b1b;

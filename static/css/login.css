@@ -8,14 +8,14 @@ main{
     max-height:90vh;
     margin: 100px auto;
     padding: 30px;
-    background-color: #1a1a1a; /* darker background */
+    background-color: var(--mainboxes-background); /* darker background */
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* slight shadow effect */
 }
 
 .login-container h1 {
     text-align: center;
-    color: #8f008b; /* theme color */
+    color: var(--username-text); /* theme color */
     font-size: 3em;
     margin-bottom: 20px;
 }
@@ -34,8 +34,8 @@ main{
     padding: 15px;
     border: none;
     border-radius: 10px;
-    background-color: #3d3d3d; /* input field background */
-    color: #ffffff; /* input text color */
+    background-color: var(--searchbox-background); /* input field background */
+    color: var(--theme-text); /* input text color */
 }
 .login-container input[type="submit"] {
     width: 100%;
@@ -43,13 +43,10 @@ main{
     padding: 15px;
     border: none;
     border-radius: 10px;
-    background-color: #8f008b; /* theme color */
-    color: #ffffff; /* button text color */
+    background-color: var(--button-background); /* theme color */
+    color: var(--box-innertext); /* button text color */
     cursor: pointer;
     transition: background-color 0.3s;
-}
-.login-container input[type="submit"]:hover {
-    background-color: #6a0065; /* darker theme color on hover */
 }
 
 .register-link {
@@ -57,7 +54,7 @@ main{
     margin-top: 20px;
 }
 .register-link a {
-    color: #8f008b; /* theme color */
+    color: var(--username-text); /* theme color */
     text-decoration: none;
     font-weight: bold;
 }

@@ -12,12 +12,10 @@
     <h2>Welcome to room by @{{ room.host.username }}</h2>
     <h2 class="room_title">{{ room.discription }}</h2>
     
-    
     {% if not is_member %}
     <a href="{% url 'joinroom' pk=room.id%}" class="join_button center">Join Room</a>
     {% endif %}
     
-
     <div class="chat_box">
       <ul class="chats">
 
@@ -48,7 +46,9 @@
     <h2 class="center">Members</h2>
     <ul class="members_list">
       {% for member in room_members %}
-      <li class="center"><a href="{% url 'profilepage' %}?profile={{ member.username }}">@{{ member.username }}</a></li>
+      <li class="center">
+        <a href="{% url 'profilepage' %}?profile={{ member.username }}">@{{ member.username }}</a>
+      </li>
       {% endfor %}
     </ul>
   </div>

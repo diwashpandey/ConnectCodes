@@ -11,6 +11,7 @@
     <h2 class='center'>Topics</h2>
     <ul class="topics">
       {% for topic_name in topics %}
+      
       <li>
         <a href="?={{ topic_name.topic }}">{{ topic_name.topic }}</a>
       </li>
@@ -24,7 +25,8 @@
     </div>
     {% for room in rooms %}
     <div class="room_card">
-      <a href="{% url 'profilepage' %}?profile={{ room.host.username }}" class="room_host">@{{ room.host.username }}</a>
+      
+      <a href="{% url 'profilepage' %}?profile={{ room.host.username }}" class="room_host"><img src="/media/{{ room.host.profile_pic }}" alt="profile_pic" class="profile_pic">@{{ room.host.username }}</a>
       <p class="room_discription">{{ room.discription }}</p>
       <hr />
       <div class="room_card_footer">
@@ -41,7 +43,13 @@
   <div class="friends_box">
     <h2 class="center">Your Follows</h2>
     <ul class="friends_list">
-      <li class="friend">Diwash Pandey</li>
+      {% for friend in request.user.following.all %}
+      <li class="friend">
+        <a href="{% url 'profilepage' %}?profile={{ friend.username }}" class="room_host">
+          <img src="media/{{ friend.profile_pic }}" alt="profile_pic" class="profile_pic">@{{ friend.username }}
+        </a>
+      </li>
+      {% endfor %}
     </ul>
   </div>
 </main>

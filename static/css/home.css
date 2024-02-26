@@ -108,22 +108,23 @@ main>div{
 
 .friends_list{
     width:100%;
+    list-style-type: none;
 }
 
-.friends_list>li{
-    height:60px;
+.friends_list>li>a{
+    height:50px;
     width:100%;
     padding:10px;
 
     display: flex;
     align-items: center;
 
+    color:var(--box-innertext);
     border-radius: 15px;
-
     background-color: var(--button-background);
     list-style-type: none;
 
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
 .room_card{
@@ -139,10 +140,20 @@ main>div{
     background-color: var(--searchbox-background);
 }
 
+.profile_pic{
+    height:40px;
+    width:40px;
+    object-fit:cover;
+    border-radius: 50%;
+    border:2px solid var(--button-background);
+}
+
 .room_host{
     font-size: 1em;
     font-style: italic;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap:10px;
     margin-bottom: 10px;
     text-decoration: none;
     color:var(--username-text);

@@ -6,7 +6,7 @@ main {
 .register-container {
   width: 400px;
   padding: 20px;
-  background-color: #1a1a1a; /* darker background */
+  background-color: var(--mainboxes-background); /* darker background */
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* slight shadow effect */
 }
@@ -32,8 +32,8 @@ main {
   padding: 15px;
   border: none;
   border-radius: 10px;
-  background-color: #3d3d3d; /* input field background */
-  color: #ffffff; /* input text color */
+  background-color: var(--searchbox-background); /* input field background */
+  color: var(--theme-text); /* input text color */
 }
 .register-container input[type="submit"] {
   width: 100%;
@@ -41,15 +41,25 @@ main {
   padding: 15px;
   border: none;
   border-radius: 10px;
-  background-color: #8f008b; /* theme color */
-  color: #ffffff; /* button text color */
+  background-color: var(--button-background); /* theme color */
+  color: var(--box-innertext); /* button text color */
   cursor: pointer;
-  transition: background-color 0.3s;
   font-size: 1.3em;
 }
-.register-container input[type="submit"]:hover {
-  background-color: #6a0065; /* darker theme color on hover */
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
 }
+.login-link a {
+  color: var(--username-text); /* theme color */
+  text-decoration: none;
+  font-weight: bold;
+}
+.login-link a:hover {
+  text-decoration: underline;
+}
+
 
 .messages {
   list-style-type: none;
