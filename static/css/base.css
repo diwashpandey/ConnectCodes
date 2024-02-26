@@ -29,7 +29,6 @@
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     color: var(--theme-text);
-    transition: color 0.3s ease, background-color 0.3s ease
 }
 
 .center{
