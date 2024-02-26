@@ -55,6 +55,7 @@ main{
 
 
 
+
 .chat_box>form{
     height:50px;
     width:90%;
@@ -100,7 +101,7 @@ main{
     position:absolute;
     top:10px;
     right:10px;
-    color:var(--theme-text);
+    color:var(--box-innertext);
     text-decoration: none;
     background-color: var(--button-background);
     border-radius: 25px;
@@ -122,18 +123,24 @@ Chat cards
 }
 
 .chats>li{
-    list-style-type: none;
-    background-color: var(--button-background);
-    max-width:50%;
     min-height: 80px;
     max-height: 100000px;
-    padding:15px;
-    border-radius: 25px;
+    max-width:50%;
+    padding:10px;
     margin-bottom:10px;
+
+    display:grid;
+    grid-template-columns: 43px calc(100% - 43px);
+
+    list-style-type: none;
+
+    border-radius: 25px;
+    background-color: var(--button-background);
+
     word-wrap: break-word;
 }
 
-.chats>li>a{
+.chats a{
     display:block;
     text-decoration: none;
     opacity:0.75;
@@ -142,9 +149,27 @@ Chat cards
     margin-bottom:3px;
 }
 
-.chats>li>p{
+.chats p{
     font-size:1.2em;
     font-weight: 400;
+}
+
+.chats .section_1{
+    justify-self: center;
+    align-self: flex-start;
+}
+
+.chats .section_2 p, .section_2 a{
+    color:var(--box-innertext);
+}
+
+.profile_pic{
+    height:40px;
+    width:40px;
+    object-fit:cover;
+    border-radius: 50%;
+    border:2px solid var(--button-background);
+    
 }
 
 /* 
@@ -162,6 +187,7 @@ Chat cards
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
+    overflow-y: scroll;
 }
 
 .members_container>h2{
@@ -179,10 +205,19 @@ Chat cards
     width:100%;
 }
 
-.members_list>li{
+.members_list>.member{
     height:50px;
     width:100%;
     margin-bottom:10px;
     background-color: var(--button-background);
     border-radius: 10px;
+    padding:5px;
+
+}
+
+.member>a{
+    justify-content: flex-start;
+    gap:10px;
+    text-decoration: none;
+    color:var(--box-innertext);
 }

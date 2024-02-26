@@ -73,7 +73,7 @@ main>div{
     font-weight: 400;
     border-radius: 15px;
     text-decoration: none;
-    color:white;
+    color:var(--box-innertext);
     
 }
 
@@ -201,5 +201,5 @@ main>div{
     font-size: 1em;
     font-weight: 400;
     border-radius: 15px;
-    color:white;
+    color:var(--box-innertext);
 }

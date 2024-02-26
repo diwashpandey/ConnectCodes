@@ -45,7 +45,7 @@ nav a{
     border-radius: 15px;
 
     background-color: var(--button-background);
-    color:white;
+    color:var(--box-innertext);
 }
 .search{ 
     height:60px;
@@ -67,6 +67,7 @@ nav a{
     font-size: 1.6em;
     border:none;
     border-radius: 50px;
+    color:var(--theme-text);
 }
 
 .searchbox:focus-visible{

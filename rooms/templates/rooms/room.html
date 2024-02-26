@@ -21,8 +21,13 @@
 
         {% for i in messages %}
         <li>
-          <a href="{% url 'profilepage' %}?profile={{ i.user.username }}">@{{ i.user.username }}</a>
-          <p>{{ i.message }}</p>
+          <div class="section_1">
+            <img src="/media/{{ i.user.profile_pic }}" alt="profile_pic" class="profile_pic">
+          </div>
+          <div class="section_2">
+            <a href="{% url 'profilepage' %}?profile={{ i.user.username }}">@{{ i.user.username }}</a>
+            <p>{{ i.message }}</p>
+          </div>
         </li>
         {% endfor %}
 
@@ -46,8 +51,10 @@
     <h2 class="center">Members</h2>
     <ul class="members_list">
       {% for member in room_members %}
-      <li class="center">
-        <a href="{% url 'profilepage' %}?profile={{ member.username }}">@{{ member.username }}</a>
+      <li class="member">
+        <a href="{% url 'profilepage' %}?profile={{ member.username }}" class="room_host center">
+          <img src="/media/{{ member.profile_pic }}" alt="profile_pic" class="profile_pic">@{{ member.username }}
+        </a>
       </li>
       {% endfor %}
     </ul>
