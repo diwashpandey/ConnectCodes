@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from rooms.models import Room, Topic
 from django.contrib.auth import get_user_model
 from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 
 from django.contrib import messages
 # from django.contrib.auth.models import User
@@ -11,7 +11,13 @@ User = get_user_model()
 # Create your views here.
 
 def gethomepage(request):
-    rooms = Room.objects.all().order_by("-id")
+    search = request.GET.get("search")
+    search = "" if search == None else search
+
+    rooms = Room.objects.filter(Q(topic__topic__icontains = search) | 
+                                Q(host__username__icontains = search) |
+                                Q(discription__icontains = search)).order_by("-id")
+    
     topics = Topic.objects.all()
     return render(request, 'home/home.html', {"rooms":rooms, "topics":topics})
 

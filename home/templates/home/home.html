@@ -11,9 +11,8 @@
     <h2 class='center'>Topics</h2>
     <ul class="topics">
       {% for topic_name in topics %}
-      
       <li>
-        <a href="?={{ topic_name.topic }}">{{ topic_name.topic }}</a>
+        <a href="?search={{ topic_name.topic }}">{{ topic_name.topic }}</a>
       </li>
       {% endfor %}
     </ul>
