@@ -271,6 +271,9 @@ main>div{
     .room_host{
         font-size: 0.8em;
     }
+    .room_card{
+        min-height:200px
+    }
     
     
 }
@@ -299,6 +302,9 @@ main>div{
     .room_card_footer{
         padding:0px;
         width:90%;
+    }
+    .main_container_header>h1{
+        font-size: 1.2em;
     }
 }
 
