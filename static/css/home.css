@@ -14,8 +14,8 @@ main>div{
 
 .topics_box{
     height:60vh;
-    width:20vw;
-    min-width: 300px;
+    max-width:20vw;
+    min-width: 250px;
 
     display:flex;
     align-items: center;
@@ -26,8 +26,8 @@ main>div{
 }
 
 .topics_box>h2{
-    font-size: 2em;
-    font-weight: 500;
+    font-size: 1.8em;
+    font-weight: 400;
     height:50px;
     width:130px;
     border-radius: 25px;
@@ -40,7 +40,7 @@ main>div{
 }
 
 .topics_box a{
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-decoration: none;
 }
 
@@ -96,6 +96,7 @@ main>div{
     background-color: var(--mainboxes-background);
 }
 
+
 .friends_box>h2{
     font-size: 2em;
     font-weight: 400;
@@ -129,7 +130,7 @@ main>div{
 
 .room_card{
     margin: auto;
-    height:250px;
+    min-height:250px;
     width:90%;
     padding:20px;
     margin-bottom: 20px;
@@ -163,6 +164,7 @@ main>div{
     font-size: 1.8em;
     font-weight: 400;
 }
+
 .room_card>hr{
     margin-top:20px;
     opacity: 0.3;
@@ -203,3 +205,100 @@ main>div{
     border-radius: 15px;
     color:var(--box-innertext);
 }
+
+@media (max-width:1255px) {
+    .friends_box{
+        display:none;
+    }
+    .main_container{
+        width:100vw
+    }
+    main>div{
+        padding:0px;
+    }
+
+}
+
+@media (max-width:1000px) {
+    .topics_box{
+        min-width: 150px;
+    }
+    .room_discription{
+        font-size: 1.2em;
+    }
+    .room_host{
+        font-size: 0.8em;
+    }
+    .see_room_button{
+        height:45px;
+        width:90px;
+        font-size:0.8em;
+    }
+    .create_room_button{
+        height:50px;
+        width:120px;
+        font-size:0.7em;
+    }
+}
+@media (max-width:700px) {
+    .main_container_header>h1{
+        font-size: 1.5em;
+    }
+    .topics_box{
+        min-width: 150px;
+    }
+    .topics_box>h2{
+        font-size: 1.4em;
+    }
+    .topics_box a{
+        font-size: 0.9em;
+    }
+    .room_member_count{
+        font-size: 0.8em;
+    }
+    .room_card_footer{
+        padding:10px;
+    }
+}
+
+@media (max-width:700px) {
+    .topics_box{
+        display:none;
+    }
+    .main_container{
+        width:calc(100vw - 10px)
+    }
+    .room_host{
+        font-size: 0.8em;
+    }
+    
+    
+}
+@media (max-width:450px) {
+    
+    .profile_pic{
+        height:25px;
+        width:25px;
+    }
+    .see_room_button{
+        height:35px;
+        width:70px;
+        font-size:0.5em;
+    }
+    .create_room_button{
+        height:40px;
+        width:100px;
+        font-size:0.5em;
+    }
+    .room_member_count{
+        font-size: 0.5em;
+    }
+    .members_logo{
+        height:15px;
+    }
+    .room_card_footer{
+        padding:0px;
+        width:90%;
+    }
+}
+

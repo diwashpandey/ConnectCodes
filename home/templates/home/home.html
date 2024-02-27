@@ -30,9 +30,7 @@
       <hr />
       <div class="room_card_footer">
         <p class="room_member_count"><img src="{% static 'equipments/website_icons/homepage/members.svg' %}" alt="members icon" class="members_logo">{{ room.members.all.count }} Members</p>
-        <a href="{% url 'roompage' room.id %}" class="see_room_button center"
-          >See Room</a
-        >
+        <a href="{% url 'roompage' room.id %}" class="see_room_button center">See Room</a>
       </div>
     </div>
     {% endfor %}
