@@ -8,6 +8,7 @@
 {% include "header_with_search.html" %}
 <main>
   <div class="topics_box">
+    <img src="{% static 'equipments/website_icons/homepage/arrow.svg' %}" alt="" class="revealer" onclick="revealBox()">
     <h2 class='center'>Topics</h2>
     <ul class="topics">
       {% for topic_name in topics %}
@@ -50,5 +51,7 @@
     </ul>
   </div>
 </main>
+
+<script src="{% static 'js/home_responsive.js' %}"></script>
 
 {% endblock %}
