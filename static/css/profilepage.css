@@ -125,25 +125,3 @@
   color: var(--username-text);
 }
 
-.profile-page .content__button {
-  margin: 3rem 0 2rem;
-  text-align: center;
-  order: 4;
-}
-
-.profile-page .content__button .button {
-  display: inline-block;
-  padding: 1.2rem 1.8rem;
-  text-align: center;
-  text-decoration: none;
-  background: var(--button-background);
-  border-radius: 2rem;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  font-size: 1rem;
-  color: #fff;
-  cursor: pointer;
-}
-
-.profile-page .content__button .button:hover {
-  color: #fff;
-}
