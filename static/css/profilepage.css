@@ -114,6 +114,10 @@
   font-size: 1rem;
 }
 
+.profile-page .content__list li a {
+  text-decoration: none;
+}
+
 .profile-page .content__list li span {
   display: block;
   margin-bottom: 0.1rem;
@@ -124,4 +128,3 @@
 .profile-page .content__list li .numbers {
   color: var(--username-text);
 }
-
