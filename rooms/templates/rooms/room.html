@@ -34,9 +34,9 @@
       </ul>
 
       {% if is_member %}
-      <form method="post">
+      <form id="form">
         {% csrf_token %}
-        <textarea type="text" name="message" class="messege_box"  required ></textarea>
+        <textarea type="text" name="message" class="message_box"  required ></textarea>
         <button type="submit" class="send_button">
           <img src="{% static '/equipments/website_icons/roompage/send.svg' %}" alt=""/>
         </button>
@@ -59,11 +59,15 @@
       {% endfor %}
     </ul>
   </div>
+
+  {{room.id|json_script:"room_id"}}
 </main>
+
 {% endblock %}
 
+
 {% block addjs %}
-
-<script src="{% static 'js/connect_socket.js' %}"></script>
-
+  {% if is_member %}
+    <script src="{% static 'js/connect_socket.js' %}"></script>
+  {% endif %}
 {% endblock %}
