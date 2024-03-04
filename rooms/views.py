@@ -21,6 +21,7 @@ def getroompage(request, pk):
         is_member = True
     return render(request, "rooms/room.html", {'messages': messages, 'room' : room, 'room_members': room_members, "is_member": is_member})
 
+
 @login_required(login_url = "loginpage")
 def getcreateroompage(request):
     if request.method == "POST":
