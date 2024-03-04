@@ -22,6 +22,10 @@ socket.onclose=(e)=>{
 socket.onmessage=(e)=>{
     console.log("Received messege from the server")
 
+    //Data unpacking
+    let data = JSON.parse(e.data)
+    
+
     // Creates a list-item to be filled with data and pushed into ul(.chats)
     let li = document.createElement("li")
 
@@ -31,7 +35,8 @@ socket.onmessage=(e)=>{
     div1.classList.add("section_1")
     //Creates the img tag for profile picture and puts the source link
     let img = document.createElement("img")
-    img.src = ""
+    img.src = `/media/${data.profile_pic}/`
+    img.classList.add("profile_pic")
 
     div1.appendChild(img) //Finally append the well created img element inside the div
     
@@ -41,10 +46,11 @@ socket.onmessage=(e)=>{
     div2.classList.add("section_2")
     // Create the anchor-point for username along with the username in it
     let a = document.createElement("a")
-    a.href = "" //Will add the link here
+    a.href = `/profile/?profile=${data.username}` //Will add the link here
+    a.innerHTML = `@${data.username}`
     // Create the p tag and add the reveived messege to it.
     let p = document.createElement("p")
-    p.innerHTML = e.data
+    p.innerHTML = data.message
 
 
     //Append username and messege inside the section_2 div 

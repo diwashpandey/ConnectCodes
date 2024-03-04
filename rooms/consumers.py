@@ -22,8 +22,9 @@ class ChatConsumers(AsyncConsumer):
         print("Messege received from client")
 
         data = json.dumps({
-            "person":self.user.username,
-            "photo":self.user.profile_pic.name
+            "username":self.user.username,
+            "profile_pic":self.user.profile_pic.name,
+            "message":event["text"]
         })
 
         # await database_sync_to_async(Message.objects.create)(
