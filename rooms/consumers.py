@@ -27,11 +27,11 @@ class ChatConsumers(AsyncConsumer):
             "message":event["text"]
         })
 
-        # await database_sync_to_async(Message.objects.create)(
-        #     room = self.room,
-        #     user=self.user,
-        #     message=event["text"]
-        #     )
+        await database_sync_to_async(Message.objects.create)(
+            room = self.room,
+            user=self.user,
+            message=event["text"]
+            )
         
         await self.channel_layer.group_send(self.room_id,{
             "type":"message.send",
