@@ -36,7 +36,6 @@ socket.onmessage=(e)=>{
     div1.appendChild(img) //Finally append the well created img element inside the div
     
 
-
     // Create the second dic section for list-item
     let div2 = document.createElement("div")
     div2.classList.add("section_2")
@@ -52,7 +51,7 @@ socket.onmessage=(e)=>{
     div2.appendChild(a)
     div2.appendChild(p)
 
-    
+
     //Add both sections(div) into the li
     li.appendChild(div1)
     li.appendChild(div2)
