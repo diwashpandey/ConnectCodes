@@ -9,14 +9,15 @@ class ChatConsumers(AsyncConsumer):
 
     async def websocket_connect(self, event):
         self.user = self.scope["user"]
-        self.room_id = self.scope["url_route"]["kwargs"]['room_id']
-        self.room = await database_sync_to_async(Room.objects.get)(id = self.room_id)
-        # room_members = await database_sync_to_async(room.members.all)()
-
-        await self.channel_layer.group_add(self.room_id, self.channel_name)
-        await self.send({
-            "type":"websocket.accept"
-        })
+        
+        if self.user.is_authenticated:
+            self.room_id = self.scope["url_route"]["kwargs"]['room_id']
+            self.room = await database_sync_to_async(Room.objects.get)(id = self.room_id)
+            # room_members = await database_sync_to_async(room.members.all)()
+            await self.channel_layer.group_add(self.room_id, self.channel_name)
+            await self.send({
+                "type":"websocket.accept"
+            })
     
     async def websocket_receive(self, event):
         print("Messege received from client")
