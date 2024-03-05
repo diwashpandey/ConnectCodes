@@ -26,7 +26,7 @@ def getroompage(request, pk):
                       'room' : room,
                       'room_members': room_members, "is_member": is_member
                       }
-                      )
+                    )
 
 
 @login_required(login_url = "loginpage")
