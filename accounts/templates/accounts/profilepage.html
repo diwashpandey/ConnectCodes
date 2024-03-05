@@ -21,9 +21,9 @@
     
     <div class="content__actions">
       {% if not request.user == user %}
-      <form method="post">
+      <form>
         {% csrf_token %}
-        <button class="button"
+        <button class="button commit_button"
         {% if not request.user.username == user.username %}
         type="submit" name="commit" value="{% if already_following %} unfollow {{user.username}}{% else %}follow {{user.username}}{% endif %}"
 
@@ -57,4 +57,10 @@
   </div>
 </main>
 
+{% endblock %}
+
+{% block addjs %}
+  {% if not request.user == user %}
+    <script src="{% static 'js/commit_socket.js' %}"></script>
+  {% endif %}
 {% endblock %}
