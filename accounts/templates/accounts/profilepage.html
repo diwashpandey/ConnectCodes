@@ -21,7 +21,7 @@
     
     <div class="content__actions">
       {% if not request.user == user %}
-      <form>
+      <form class="form">
         {% csrf_token %}
         <button class="button commit_button"
         {% if not request.user.username == user.username %}
