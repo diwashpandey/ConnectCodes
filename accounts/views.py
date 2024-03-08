@@ -7,31 +7,8 @@ User = get_user_model()
 
 @login_required(login_url="loginpage")
 def getprofilepage(request):
-    if request.method=="POST":
-        if request.user.is_authenticated:
-            data = request.POST
-            commit = data.get("commit")
-            commit = commit.strip().split()
-
-            to_do = commit[0]
-            comit_to_username = commit[1]
-            requested_username = request.user.username
-            print(f"Request get from {requested_username} for {to_do} to {comit_to_username}")
-            self_user = User.objects.get(username = requested_username)
-            to_user = User.objects.get(username = comit_to_username)
-            try:
-                if to_do == 'follow':
-                    self_user.following.add(to_user)
-                elif to_do == 'unfollow':
-                    self_user.following.remove(to_user)
-            except:
-                print("i am in except")
-                return redirect("homepage")
-        else:
-            return redirect('loginpage')
-        
+    
     username = request.GET.get('profile')
-
     try:
         user = User.objects.get(username=username)
         room_count = user.room_host.all().count()

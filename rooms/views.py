@@ -6,12 +6,6 @@ from django.contrib.auth.decorators import login_required
 
 def getroompage(request, pk):
     key = int(pk)
-
-    # this receives the messege that user has sent
-    if request.method == 'POST':
-        message = request.POST.get('message')
-        room = Room.objects.get(id=key)
-        Message.objects.create(room = room, user = request.user, message = message)
     
     room = Room.objects.get(id=key)
     room_members = room.members.all()
@@ -27,7 +21,6 @@ def getroompage(request, pk):
                       'room_members': room_members, "is_member": is_member
                       }
                     )
-
 
 @login_required(login_url = "loginpage")
 def getcreateroompage(request):
