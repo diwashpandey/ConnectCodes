@@ -25,7 +25,7 @@
         {% csrf_token %}
         <button class="button commit_button"
         {% if not request.user.username == user.username %}
-        type="submit" name="commit" value="{% if already_following %} unfollow {{user.username}}{% else %}follow {{user.username}}{% endif %}"
+        type="submit" name="commit" value="{% if already_following %}Unfollow {{user.username}}{% else %}Follow {{user.username}}{% endif %}"
 
         {% endif %}>
           {% if already_following %}
