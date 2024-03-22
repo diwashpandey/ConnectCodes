@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Message, Room, Topic
 from django.contrib.auth.decorators import login_required
+from django.views.generic import DetailView
 # from django.contrib.auth.models import User
 # Create your views here.
 
@@ -18,9 +19,11 @@ def getroompage(request, pk):
                   {
                       'messages': messages,
                       'room' : room,
-                      'room_members': room_members, "is_member": is_member
+                      'room_members': room_members,
+                      "is_member": is_member
                       }
                     )
+
 
 @login_required(login_url = "loginpage")
 def getcreateroompage(request):
