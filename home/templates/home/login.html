@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load socialaccount %}
 {% block title %}- Login{% endblock %}
 
 {% block stylesheet %}
@@ -25,6 +26,7 @@
         </form>
         <div class="register-link">
             <span>Don't have an account? </span><a href="{% url 'registerpage' %}">Register</a>
+            <a href="{% provider_login_url 'google' %}?next=/">Login with google</a>
         </div>
     </div>
 </main>

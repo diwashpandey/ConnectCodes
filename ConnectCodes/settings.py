@@ -29,6 +29,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# To show which site that we are using for login
+# Or let's say social login
+SITE_ID = 2
+
 
 # Application definition
 
@@ -46,6 +50,12 @@ INSTALLED_APPS = [
     'home',
     'rooms',
     'accounts',
+
+    # Implementing the Social login
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google', # Google login
 ]
 
 MIDDLEWARE = [
@@ -56,7 +66,23 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "django.middleware.common.CommonMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+
+    "allauth.account.middleware.AccountMiddleware",
 ]
+
+# Adding the scopes and params for the providers
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE':['profile','email'],
+        'AUTH_PARAMS':{'access_type':'online'}
+    }
+}
 
 ROOT_URLCONF = 'ConnectCodes.urls'
 
@@ -146,3 +172,11 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
