@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Message, Room, Topic
 from django.contrib.auth.decorators import login_required
 from django.views.generic import DetailView
+from django.http import JsonResponse
 # from django.contrib.auth.models import User
 # Create your views here.
 
@@ -47,3 +48,31 @@ def add_into_room(request, pk):
     room = Room.objects.get(id = pk)
     room.members.add(user)
     return redirect('roompage', pk=pk)
+
+@login_required(login_url="loginpage")
+def delete_room(request, pk):
+    success = False # This will be sent to the client as a success or not message
+    try:
+        room = Room.objects.get(id=pk)
+
+        # checking if user is host of room or the manager of the website
+        if (request.user.has_perm("rooms.delete_room") or room.host == request.user):
+            room.delete()
+
+            # Setting the success to True
+            success = True
+        else:
+            # User don't have the permission
+            success = False
+
+    except:
+        # Room not founs
+        success = False
+
+    finally:
+        # Returning the success or not status to the client
+        return JsonResponse({
+            "success": success
+        })
+
+    

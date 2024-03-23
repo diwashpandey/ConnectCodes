@@ -196,6 +196,30 @@ main>div{
     margin-top:20px;
     opacity: 0.3;
 }
+
+.room_card_header{
+    display:flex;
+}
+
+.topic_name{
+    padding:0px 10px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.201);
+    margin-left:auto;
+    margin-right:10px;
+}
+
+.room_card .delete_button{
+    height:35px;
+    width:65px;
+    background-color: red;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    color:var(--theme-text);
+}
+
 .room_card_footer{
     padding:20px;
     width:95%;

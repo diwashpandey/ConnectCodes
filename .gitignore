@@ -1,1 +1,40 @@
-.venv
+# Django project files
+*.pyc
+*.pyo
+__pycache__/
+*.sqlite3
+
+# Secret key
+*.secret_key
+
+
+# Media files
+/media/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Log files
+*.log
+
+# Virtual environment
+venv/
+.env
+
+# Database files
+db.sqlite3
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Ignore migrations if you're not versioning them
+*/migrations/
+
+# Ignore any local development settings
+local_settings.py
+accounts/__pycache__/__init__.cpython-312.pyc
+*.pyc

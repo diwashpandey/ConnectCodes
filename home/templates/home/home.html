@@ -25,8 +25,20 @@
     </div>
     {% for room in rooms %}
     <div class="room_card">
-      
-      <a href="{% url 'profilepage' %}?profile={{ room.host.username }}" class="room_host"><img src="/media/{{ room.host.profile_pic }}" alt="profile_pic" class="profile_pic">@{{ room.host.username }}</a>
+      <div class="room_card_header">
+        <a href="{% url 'profilepage' %}?profile={{ room.host.username }}" class="room_host">
+          <img src="/media/{{ room.host.profile_pic }}" alt="profile_pic" class="profile_pic">@{{ room.host.username }}
+        </a>
+        <div class="center topic_name">{{ room.topic.topic}}</div>
+        <!-- perms.rooms.delete_room  or  -->
+        
+        {% if room.host == request.user or perms.rooms.delete_room %}
+          <form class="delete_button_form" data-url="{% url 'deleteroom' room.id %}">
+          {% csrf_token %}
+            <button type="submit" class="center delete_button">Delete</button>
+          </form>
+        {% endif %}
+      </div>
       <p class="room_discription">{{ room.discription }}</p>
       <hr />
       <div class="room_card_footer">
@@ -53,5 +65,6 @@
 </main>
 
 <script src="{% static 'js/home_responsive.js' %}"></script>
+<script src="{% static 'js/delete_room.js' %}"></script>
 
 {% endblock %}
