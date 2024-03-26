@@ -1,9 +1,52 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
+from django.views.generic.base import TemplateView
+from django.http import JsonResponse, HttpResponseRedirect
+from .registration import CustomRegistration
+from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
+
+import json
 # Create your views here.
 
 User = get_user_model()
+
+class GetRegisterPage(TemplateView, CustomRegistration):
+    template_name = 'accounts/register.html'
+    
+    def post(self, request):
+        print("This is POST:", request.POST)
+        print("This is body:", request.body)
+        data = json.loads(request.body)
+        self.register_if_valid(registration_data=data)
+        return JsonResponse({
+            "success":self.success,
+            "message":self.message_to_client,
+            "redirect-url":reverse("loginpage")
+        })
+    
+class GetLoginPage(TemplateView):
+    template_name = "accounts/login.html"
+
+    def post(self, request):
+        data = request.POST
+        username = data.get('username')
+        password = data.get('password')
+
+        user = User.objects.filter(username = username)
+
+        if user.exists():
+            user = authenticate(username = username, password = password)
+            if user is not None:
+                login(request, user)
+                return redirect("homepage")
+            else:
+                messages.error(request, "Username or password didn't match")
+        else:
+            messages.error(request, "Username didn't found")
+
+        return redirect("loginpage")
 
 @login_required(login_url="loginpage")
 def getprofilepage(request):
@@ -55,3 +98,7 @@ def getedit_profilepage(request, userid):
             
     except Exception as e:
         print("An error occurred:", e)
+
+def logoutuser(request):
+    logout(request)
+    return redirect('loginpage')
