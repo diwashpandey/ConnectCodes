@@ -11,14 +11,19 @@
 <main class="room-container">
     <div class="room-form">
         <h1>Create New Room</h1>
-        <form action="#" method="post">
+        <form method="post">
             {% csrf_token %}
-            <select name="topic" required>
-                <option value="" disabled selected>Select Topic</option>
-                {% for i in topics %}
-                <option value="{{i.topic}}">{{i.topic}}</option>
-                {% endfor %}
-            </select>
+            <div class="select_topics">
+                <select name="topic" data-topics="{% for i in topics %}{{i.topic}},{% endfor %}" class= "topics_selection" required>
+                    <option value="" disabled selected>Select Topic</option>
+                    {% for i in topics %}
+                    <option value="{{i.topic}}">{{i.topic}}</option>
+                    {% endfor %}
+                </select>
+                <select name="sub_topic" class="subtopics" required>
+                    <option value="" disabled selected>SubTopic</option>
+                </select>
+            </div>
             <textarea name="description" placeholder="Write your description" rows="4" required></textarea>
             <div class="button-container">
                 <button type="submit">Create Room</button>
@@ -29,6 +34,7 @@
             &copy; 2024 Your Company | All Rights Reserved
         </div>
     </div>
+    <script src="{% static 'js/createroom.js' %}"></script>
 </main>
 
 {% endblock %}

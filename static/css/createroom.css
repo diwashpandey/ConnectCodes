@@ -22,6 +22,12 @@
     font-size: 36px;
     margin-bottom: 30px;
 }
+
+.select_topics{
+    display: flex;
+    gap: 5px;
+}
+
 .room-form select,
 .room-form textarea {
     width: 100%;
@@ -31,7 +37,7 @@
     border-radius: 15px;
     background-color: var(--searchbox-background); /* input field background */
     color: var(--theme-text); /* input text color */
-    font-size:1.3em;
+    font-size:1em;
 }
 .room-form textarea {
     resize: none; /* Prevent textarea from being resized */

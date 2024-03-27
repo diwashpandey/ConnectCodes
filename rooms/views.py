@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Message, Room, Topic
+from .models import Message, Room, Topic, SubTopic
 from django.contrib.auth.decorators import login_required
 from django.views.generic import DetailView
 from django.http import JsonResponse
@@ -32,10 +32,18 @@ def getcreateroompage(request):
         data = request.POST
 
         selected_topic = data.get('topic')
+        selected_subtopic = data.get('sub_topic')
         description = data.get('description')
 
         topic = Topic.objects.get(topic = selected_topic)
-        room = Room.objects.create(topic = topic, discription = description, host=request.user)
+        print("\n\n\n\n", topic)
+        subtopic = SubTopic.objects.get(subtopic=selected_subtopic, main_topic=topic)
+        print("Found sub topic", subtopic)
+
+        room = Room.objects.create(topic = topic,
+                                   discription = description,
+                                   subtopic = subtopic,
+                                   host=request.user)
         room.members.add(request.user)
         return redirect('homepage')
     
